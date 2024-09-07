@@ -1,0 +1,60 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #a07fe0;
+    margin: 0;
+    padding: 0;
+}
+header, footer {
+    background-color: #db84c5;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    margin-bottom: 0%;
+}
+h1 {
+    margin: 0;
+}
+section {
+    padding: 1em;
+}
+article {
+    background-color: #f5d6ec;
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h2 {
+    color: #333;
+}
+pre {
+    background-color: #1e1e1e;
+    color: #f8f8f2; 
+    padding: 1em;
+    border-radius: 8px;
+    overflow-x: auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+    border: 1px solid #444; 
+    white-space: pre-wrap; 
+}
+code {
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 1em;
+    color: #50fa7b;
+}
+code .keyword {
+    color: #ff79c6; 
+}
+code .function {
+    color: #8be9fd; 
+}
+code .string {
+    color: #f1fa8c; 
+}
+code .comment {
+    color: #6272a4; 
+}
+
+
+
+

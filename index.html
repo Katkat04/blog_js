@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katy JS Blog</title>
+    <link rel="icon" type="image" href="img/favicon.png"/>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/353d5571a6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>JavaScript Asynchronous Concepts</h1>
+    </header>
+    
+    <section>
+        <article>
+            <h2>Introduction to asynchronous JavaScript</h2>
+            <p>
+                JavaScript is a programming language that, at first glance, seems to be completely synchronous
+                However, when it comes to time-consuming operations, such as API calls, reading files, or processing large data, we need to handle these tasks asynchronously to prevent our program from crashing, 
+                or processing large data, we need to handle these tasks asynchronously to prevent our program from crashing, 
+                This is where JavaScript's asynchronous features come into play. 
+                In this blog he explores five key concepts to 
+                understand how asynchronous tasks are handled in JavaScript: Async, Callback, Promise, Async/Await, and the Event Loop. 
+                By mastering these concepts, you can write efficient code, avoiding deadlocks while waiting for tasks to complete.
+            </p>
+        </article>
+    </section>
+
+    <section>
+        <article>
+            <h2>1. JavaScript Async</h2>
+            <p>Async functions in JavaScript are those that allow you to write promise-based code as if it were synchronous, which makes it easier to read and write.</p>
+            <pre>
+                <code>
+<span class="keyword">async</span> <span class="function">function</span> fetchData() {
+    <span class="keyword">let</span> response = <span class="keyword">await</span> fetch(<span class="string">'https://api.example.com/data'</span>);
+    <span class="keyword">let</span> data = <span class="keyword">await</span> response.json();
+    <span class="function">console</span>.log(data); <span class="comment">// Muestra los datos en la consola</span>
+}
+
+fetchData();
+                </code>
+            </pre>
+        </article>
+
+        <article>
+            <h2>2. Callback</h2>
+            <p>A callback is a function that is passed as an argument to another function and invoked to complete some action.</p>
+            <pre>
+                <code>
+<span class="function">function</span> fetchData(callback) {
+    <span class="keyword">setTimeout</span>(() => {
+        callback(<span class="string">'¡Datos obtenidos!'</span>);
+    }, 2000);
+}
+
+fetchData(data => {
+    <span class="function">console</span>.log(data);
+});
+                </code>
+            </pre>
+        </article>
+
+        <article>
+            <h2>3. Promise</h2>
+            <p>A Promise represents the eventual completion (or failure) of an asynchronous operation and its resulting value.</p>
+            <pre>
+                <code>
+<span class="keyword">let</span> promise = <span class="keyword">new</span> Promise((resolve, reject) => {
+    <span class="keyword">setTimeout</span>(() => {
+        resolve(<span class="string">'¡Datos obtenidos!'</span>);
+    }, 2000);
+});
+
+promise.then(data => <span class="function">console</span>.log(data)).catch(error => <span class="function">console</span>.log(error));
+                </code>
+            </pre>
+        </article>
+
+        <article>
+            <h2>4. Async/Await</h2>
+            <p>Async/Await is a simplified syntax for handling promises in JavaScript.</p>
+            <pre>
+                <code>
+<span class="keyword">async</span> <span class="function">function</span> fetchData() {
+    <span class="keyword">try</span> {
+        <span class="keyword">let</span> response = <span class="keyword">await</span> fetch(<span class="string">'https://api.example.com/data'</span>);
+        <span class="keyword">let</span> data = <span class="keyword">await</span> response.json();
+        <span class="function">console</span>.log(data);
+    } <span class="keyword">catch</span> (error) {
+        <span class="function">console</span>.log(error);
+    }
+}
+
+fetchData();
+                </code>
+            </pre>
+        </article>
+
+        <article>
+            <h2>5. Event Loop</h2>
+            <p>The Event Loop is responsible for executing code, processing events and executing queued sub-tasks in JavaScript.</p>
+            <pre>
+                <code>
+<span class="function">console</span>.log(<span class="string">'Inicio'</span>);
+<span class="keyword">setTimeout</span>(() => {
+    <span class="function">console</span>.log(<span class="string">'Timeout'</span>);
+}, 0);
+<span class="function">console</span>.log(<span class="string">'Fin'</span>);
+
+<span class="comment">// Out:
+// Start
+// End
+// Timeout
+</span>
+                </code>
+            </pre>
+        </article>
+    </section>
+    <footer>
+        <p>Katy Diaz Beltrán <br>
+        <i class="fa-regular fa-copyright"></i> All rights reserved.</p>
+    </footer>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
+
+
